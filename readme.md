@@ -50,15 +50,23 @@ Powerful enough for advanced applications:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/exoiduinoblocks.git
-   cd exoiduinoblocks
+   git clone https://github.com/yourusername/exoblocks.git
+   cd exoblocks
    ```
 
-2. **Open in Browser**
+2. **Build the Application**
+   - Run the setup script to build the application:
+   ```powershell
+   .\setup.ps1
+   ```
+   - This will install all necessary dependencies and create the executable files
+   - The built application will be available in the `dist` directory
+
+3. **Open in Browser**
    - Open `index.html` in your web browser
    - No server required! Works completely client-side
 
-3. **Start Building**
+4. **Start Building**
    - Drag blocks from the toolbox
    - Connect them to create your program
    - Export the generated code to Arduino IDE
@@ -130,7 +138,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 1.  **Clone the Repository:**
     ```bash
     git clone <your-repo-url>
-    cd exoidduinoblocks
+    cd exoblocks
     ```
 2.  **Open `index.html`:** Open the `index.html` file directly in a modern web browser that supports the Web Serial API (like Google Chrome or Microsoft Edge).
 

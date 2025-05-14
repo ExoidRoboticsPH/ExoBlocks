@@ -78,7 +78,17 @@
     "asar": true,
     "asarUnpack": [
       "node_modules/@serialport/**/*",
+      "node_modules/@serialport/bindings-cpp/**/*",
       "resources/arduino-data/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "arduino-data",
+        "to": "arduino-data",
+        "filter": [
+          "**/*"
+        ]
+      }
     ]
   }
 }
