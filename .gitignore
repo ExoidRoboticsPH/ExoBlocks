@@ -1,0 +1,92 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Keep package-lock.json for dependency versioning
+# package-lock.json
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+out/
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor specific
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+
+# Arduino CLI build/state files
+arduino-data/inventory.yaml
+arduino-data/*.latest
+arduino-data/*.lock
+arduino-data/downloads/
+
+# Electron specific
+release/
+*.asar
+*.dmg
+*.exe
+*.AppImage
+*.snap
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arduino specific
+*.hex
+*.elf
+*.eep
+*.bin
+*.lst
+*.map
+*.sym
+*.lss
+*.o
+*.d
+*.mk
+*.a
+
+# Compiled sketches
+sketch/
+*.ino.cpp
+*.ino.elf
+*.ino.hex
+
+# Cache directories
+.cache/
+.temp/
+
+# Coverage directory
+coverage/
+
+# Misc
+*.bak
+*.backup
+*.old
+
+# Project specific
+arduino-data/arduino-cli.exe
+arduino-data/arduino-cli.yaml 

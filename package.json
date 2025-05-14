@@ -1,0 +1,84 @@
+{
+  "name": "exoblocks",
+  "version": "1.0.0",
+  "description": "ExoBlocks - Arduino Block Programming Environment by Exoid Robotics",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "pwsh setup.ps1",
+    "build:win": "pwsh setup.ps1",
+    "rebuild": "electron-rebuild",
+    "clean": "rimraf node_modules dist",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "Exoid Robotics",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^11.0.1",
+    "electron-log": "^5.4.0",
+    "node-fetch": "^2.6.7",
+    "serialport": "^11.0.1"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.6.0",
+    "adm-zip": "^0.5.10",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
+    "rimraf": "^5.0.1"
+  },
+  "build": {
+    "appId": "com.exoidrobotics.exoblocks",
+    "productName": "ExoBlocks",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "index.html",
+      "style.css",
+      "app.js",
+      "app_*.js",
+      "libs/**/*",
+      "package.json",
+      {
+        "from": "arduino-data",
+        "to": "resources/arduino-data",
+        "filter": [
+          "arduino-cli.exe",
+          "arduino-cli.yaml",
+          "boards/**/*",
+          "libraries/**/*",
+          "packages/**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "electron/icons/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "electron/icons/Icon.ico",
+      "uninstallerIcon": "electron/icons/Icon.ico",
+      "artifactName": "${productName} Setup ${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/@serialport/**/*",
+      "resources/arduino-data/**/*"
+    ]
+  }
+}
